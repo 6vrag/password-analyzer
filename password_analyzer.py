@@ -31,12 +31,47 @@ print("Has lowercases: ", "YES!" if has_lowercase else "NO!")
 print("Has number: ", "YES!" if has_number else "NO!")
 print("Contains Symbol: ", "YES!" if has_symbol else "NO!")
 
+score = 0
 
+if length >= 8:
+    score += 1
 
-if length >= 8 and has_uppercase and has_lowercase and has_number and has_symbol:
+if has_uppercase: 
+    score += 1
+
+if has_lowercase:
+    score += 1
+
+if has_number:
+    score += 1
+
+if has_symbol:
+    score += 1
+
+print("Score: ", score)
+
+if score == 5:
      print("Strength: Strong")
 
-elif length >= 6 and has_uppercase and has_lowercase and has_number:
+elif score >= 3:
     print("Strength: Medium")
 else:
     print("Strength: Weak")
+
+if length < 8 or not has_uppercase or not has_lowercase or not has_number or not has_symbol: 
+    print("\nSuggestion: ")
+
+    if length < 8: 
+        print("- Use at least 8 Characters!")
+
+    if not has_uppercase: 
+     print("- Use Uppercase!")
+
+    if not has_lowercase:
+     print("- Use Lowercase!")
+
+    if not has_number: 
+        print("- Use Numbers!")
+
+    if not has_symbol: 
+        print("- Use Unique Symbols!")
